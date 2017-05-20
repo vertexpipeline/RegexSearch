@@ -1,0 +1,62 @@
+﻿<Window x:Class="RegexSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegexSearch"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="412" Width="710">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="219*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Height="30" Margin="8,10,131,0" VerticalAlignment="Top" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="0" Opacity="0.4" BlurRadius="10"/>
+            </Grid.Effect>
+            <TextBox Name="PathFolderTextBox" TextChanged="PathFolderTextBox_TextChanged" Background="White" BorderBrush="{x:Null}" FontSize="18" FontFamily="Consolas" Margin="0,0,34,0"/>
+            <Button x:Name="SelectFolderButton" Content="🗁" HorizontalAlignment="Right" VerticalAlignment="Top" Width="33" Background="{x:Null}" Foreground="#FFF79608" Height="30" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold">
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="116" Background="White" Height="30">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="0" Opacity="0.4" BlurRadius="10"/>
+            </Grid.Effect>
+            <Button x:Name="SearchButton" BorderThickness="0,0,1,0" Content="Search" Width="80" Background="{x:Null}" Foreground="OrangeRed" Height="30" FontSize="18" Margin="0,0,36,0" BorderBrush="#FFC3C3C3"/>
+            <Button x:Name="SelectFolderButton_Copy" Content="🔧" HorizontalAlignment="Right" VerticalAlignment="Top" Width="33" Background="{x:Null}" Foreground="#FF8008F7" Height="30" BorderBrush="{x:Null}" FontSize="18"/>
+        </Grid>
+
+        
+
+        <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00F0F0F0"/>
+
+        <local:RegexBox Margin="8,8,8,0" Grid.Row="1" BorderBrush="{x:Null}">
+            <local:RegexBox.Effect>
+                <DropShadowEffect ShadowDepth="0" Opacity="0.4" BlurRadius="10"/>
+            </local:RegexBox.Effect>
+        </local:RegexBox>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="141*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="367*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00F0F0F0"/>
+            <local:MatchList Margin="8,0,0,8">
+                <local:MatchList.Effect>
+                    <DropShadowEffect ShadowDepth="0" Opacity="0.4" BlurRadius="10"/>
+                </local:MatchList.Effect>
+            </local:MatchList>
+            <local:MatchView Grid.Column="2" Margin="0,0,8,8">
+                <local:MatchView.Effect>
+                    <DropShadowEffect ShadowDepth="0" Opacity="0.4" BlurRadius="10"/>
+                </local:MatchView.Effect>
+            </local:MatchView>
+        </Grid>
+
+    </Grid>
+</Window>
